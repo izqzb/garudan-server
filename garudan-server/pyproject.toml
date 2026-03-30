@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "garudan-server"
+version = "1.0.0"
+description = "Garudan Server — Self-hosted backend API for the Garudan mobile app"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Garudan Contributors"}
+]
+keywords = ["self-hosted", "ssh", "terminal", "server-management", "api"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: System :: Systems Administration",
+]
+
+dependencies = [
+  "fastapi>=0.111.0",
+  "uvicorn[standard]>=0.29.0",
+  "asyncssh>=2.14.0",
+  "websockets>=12.0",
+  "python-jose[cryptography]>=3.3.0",
+  "passlib[bcrypt]>=1.7.4",
+  "python-multipart>=0.0.9",
+  "psutil>=5.9.8",
+  "docker>=7.0.0",
+  "aiofiles>=23.2.1",
+  "python-dotenv>=1.0.1",
+  "rich>=13.7.1",
+  "typer>=0.12.3",
+  "httpx>=0.27.0",
+]
+
+[project.scripts]
+garudan-server = "garudan_server.cli:app"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "httpx"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["garudan_server*"]
