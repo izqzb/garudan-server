@@ -1,6 +1,6 @@
 # garudan-server
 
-Backend API for the [Garudan](https://github.com/your-username/garudan) mobile app.
+Backend API for the [Garudan](https://github.com/izqzb/garudan) mobile app.
 
 ## Install in 60 seconds
 
